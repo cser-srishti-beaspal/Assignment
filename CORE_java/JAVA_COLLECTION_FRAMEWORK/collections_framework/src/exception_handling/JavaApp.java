@@ -1,0 +1,26 @@
+package exception_handling;
+
+public class JavaApp {
+	public static void execution() {
+		String s = null;
+		try {
+			System.out.println(s+" "+s.length());
+		}catch(NullPointerException nullPointerException) {
+			System.out.println("cannot perform anything on null");
+		}
+		
+	}
+}
+
+//int i = 10;
+//System.out.println("i is : "+i);
+//int j = 0;
+//System.out.println("j is : "+j);
+//try {
+//	int k = i/j;
+//	System.out.println("K is : "+k);
+//	System.out.println("trying to do something");
+//	
+//}catch(ArithmeticException arithmeticException){
+//	System.out.println("cannot divide any no by zero");
+//}

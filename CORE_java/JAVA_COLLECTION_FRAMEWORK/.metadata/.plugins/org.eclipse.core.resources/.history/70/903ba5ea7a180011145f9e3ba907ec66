@@ -1,0 +1,10 @@
+package exception_handling;
+
+import collections_framework_list.JavaApp;
+
+public class Main {
+	public static void main(String[] args) {
+		JavaApp.execution();
+
+	}
+}

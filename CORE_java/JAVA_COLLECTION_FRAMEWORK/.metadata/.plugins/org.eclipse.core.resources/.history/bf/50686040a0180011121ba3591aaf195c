@@ -1,0 +1,47 @@
+package collections_framework_stdCrud;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import collections_framework_StudentCRUD.Student;
+
+public class Main {
+
+	public static void main(String[] args) {
+		ArrayList<Student> students = new ArrayList<>();
+		Scanner sc = new Scanner(System.in);
+		boolean flag = true;
+		
+		while(flag) {
+			System.out.println("\n1. ADD Student");
+			System.out.println("2. DISPLAY Student");
+			System.out.println("3. UPDATE Student");
+			System.out.println("4. DELETE Student");
+			System.out.println("5. EXIT");
+			System.out.println("Enter a choice:");
+			int choice = sc.nextInt();
+			
+			switch(choice) {
+				case 1:
+					Input.addStudent(students,sc);
+					break;
+				case 2:
+					JavaApp.displayStudent(student);
+					break;
+				case 3:
+					Update.updateStudent(students,sc);
+					break;
+				case 4:
+					Delete.deleteStudent(students,sc);
+					break;
+				case 5:
+					flag = false;
+					break;
+				default:
+					System.out.println("Invalid choice");
+			}
+		}
+
+	}
+
+}
