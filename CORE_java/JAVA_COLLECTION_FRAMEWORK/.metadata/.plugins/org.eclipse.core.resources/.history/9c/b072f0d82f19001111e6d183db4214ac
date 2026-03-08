@@ -1,0 +1,7 @@
+package collections_framework_Custom_Exception_handling;
+
+public class DB{
+	public static void verifier(Student student) throws studentNotFoundException{
+		
+	}
+}
