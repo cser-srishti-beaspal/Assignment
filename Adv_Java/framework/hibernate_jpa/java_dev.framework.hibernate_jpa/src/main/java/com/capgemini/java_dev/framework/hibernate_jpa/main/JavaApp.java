@@ -1,5 +1,8 @@
 package com.capgemini.java_dev.framework.hibernate_jpa.main;
 
+import java.util.Scanner;
+
+import com.capgemini.java_dev.framework.hibernate_jpa.Employee;
 import com.capgemini.java_dev.framework.hibernate_jpa.Student;
 
 import jakarta.persistence.EntityManager;
@@ -68,5 +71,128 @@ public class JavaApp {
 		
 		
 		System.out.println("Hello World!");
+	}
+	
+	public static void execution1() {
+
+	    EntityManagerFactory emf = Persistence.createEntityManagerFactory("Employee");
+	    EntityManager em = emf.createEntityManager();
+	    EntityTransaction et = em.getTransaction();
+
+	    Scanner sc = new Scanner(System.in);
+
+	    while(true){
+
+	        System.out.println("\n1 Add Employee");
+	        System.out.println("2 Update Employee");
+	        System.out.println("3 Delete Employee");
+	        System.out.println("4 Display Employee");
+	        System.out.println("5 Exit");
+
+	        int choice = sc.nextInt();
+
+	        switch(choice){
+
+	        case 1:
+	            et.begin();
+
+	            System.out.println("Enter ID:");
+	            int id = sc.nextInt();
+
+	            System.out.println("Enter Name:");
+	            String name = sc.next();
+
+	            System.out.println("Enter Email:");
+	            String email = sc.next();
+
+	            System.out.println("Enter phno:");
+	            Long phno = sc.nextLong();
+
+	            Employee emp = new Employee(id,name,email,phno);
+
+	            em.persist(emp);
+
+	            et.commit();
+
+	            System.out.println("Employee Added Successfully");
+	            break;
+
+
+	        case 2:
+
+	            System.out.println("Enter Employee ID to update:");
+	            int uid = sc.nextInt();
+
+	            Employee emp1 = em.find(Employee.class, uid);
+
+	            if(emp1 != null){
+
+	                et.begin();
+
+	                System.out.println("Enter New Email:");
+	                emp1.setEmail(sc.next());
+
+	                System.out.println("Enter New Phno:");
+	                emp1.setPhno(sc.nextLong());
+
+	                em.merge(emp1);
+
+	                et.commit();
+
+	                System.out.println("Employee Updated");
+
+	            }else{
+	                System.out.println("Employee Not Found");
+	            }
+
+	            break;
+
+
+	        case 3:
+
+	            System.out.println("Enter ID to delete:");
+	            int did = sc.nextInt();
+
+	            Employee emp2 = em.find(Employee.class, did);
+
+	            if(emp2 != null){
+
+	                et.begin();
+
+	                em.remove(emp2);
+
+	                et.commit();
+
+	                System.out.println("Employee Deleted");
+
+	            }else{
+	                System.out.println("Employee Not Found");
+	            }
+
+	            break;
+
+
+	        case 4:
+
+	            System.out.println("Enter ID to display:");
+	            int fid = sc.nextInt();
+
+	            Employee emp3 = em.find(Employee.class, fid);
+
+	            if(emp3 != null){
+	                System.out.println(emp3);
+	            }else{
+	                System.out.println("Employee Not Found");
+	            }
+
+	            break;
+
+
+	        case 5:
+	            em.close();
+	            emf.close();
+	            System.exit(0);
+	        }
+	    }
 	}
 }
