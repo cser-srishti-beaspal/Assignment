@@ -1,0 +1,7 @@
+package collections_framework_stdCrud;
+
+public class JavaApp {
+	public static void displayStudent() {
+		
+	}
+}

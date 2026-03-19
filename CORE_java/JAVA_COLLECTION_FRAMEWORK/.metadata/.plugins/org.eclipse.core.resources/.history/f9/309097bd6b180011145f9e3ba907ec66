@@ -1,0 +1,34 @@
+package collections_framework_StudentCRUD;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Update {
+
+    public static void updateStudent(ArrayList<Student> students, Scanner sc)
+    {
+        System.out.println("Enter ID to update:");
+        int id = sc.nextInt();
+        sc.nextLine();
+
+        for(Student s : students)
+        {
+            if(s.getId() == id)
+            {
+                System.out.println("Enter New Email:");
+                String email = sc.nextLine();
+
+                System.out.println("Enter New Contact:");
+                long contact = sc.nextLong();
+
+                s.setEmail(email);
+                s.setContactNo(contact);
+
+                System.out.println("Student Updated Successfully");
+                return;
+            }
+        }
+
+        System.out.println("Student Not Found");
+    }
+}

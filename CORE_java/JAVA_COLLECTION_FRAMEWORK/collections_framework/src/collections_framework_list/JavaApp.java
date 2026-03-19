@@ -1,0 +1,84 @@
+/**
+ * 
+ */
+package collections_framework_list;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.ListIterator;
+
+/**
+ * 
+ */
+public class JavaApp {
+	public static void execution() {
+		ArrayList<Integer> al1 = new ArrayList<Integer>();
+		al1.add(1);al1.add(2);al1.add(33);al1.add(4);al1.add(5);al1.add(6);
+		System.out.println(al1);
+		al1.add(2, 3);
+		System.out.println(al1);
+		Iterator<Integer> iterator = al1.iterator();
+		System.out.println("FORWARD");
+		while(iterator.hasNext()) {
+			System.out.println(iterator.next());//move to next and give the info or data
+		}
+		
+		ListIterator<Integer> listIterator = al1.listIterator(7);
+		System.out.println("BACKWARD");
+		while(listIterator.hasPrevious()) {
+			System.out.println(listIterator.previous());//move to previous and give the info or data
+		}
+		
+		System.out.println(al1);
+		al1.set(2, 30);//update
+		al1.remove(3);//to delete
+		System.out.println(al1);
+		al1.set(2, 3);//update
+		System.out.println(al1);
+		
+	}
+
+}
+
+
+
+//public class JavaApp {
+//	public static void execution() {
+//		ArrayList al = new ArrayList();
+//		al.add(null);
+//		al.add(null);
+//		al.add(null);
+//		al.add(10);
+//		al.add(10);
+//		al.add(10);
+//		al.add(true);
+//		al.add('j');
+//		
+//		al.add(12.33);
+//		al.add("java");
+//		al.add(new Product(1,"Apsara","Pencil",29.99));
+//		System.out.println(al);
+//		
+//	}
+//
+//}
+
+
+
+//public class JavaApp {
+//	public static void execution() {
+//		ArrayList<Integer> al1 = new ArrayList<Integer>();
+//		al1.add(1);al1.add(-2);al1.add(3);al1.add(-4);al1.add(5);
+//		al1.add(-6);
+//		System.out.println(al1);
+//		
+//		ArrayList<Integer> al2 = (ArrayList<Integer>) al1.clone();
+//		System.out.println(al2);
+//		
+//		System.out.println(al1.equals(al2));
+//		
+//		System.out.println(al1.hashCode());
+//		System.out.println(al2.hashCode());
+//	}
+//
+//}

@@ -1,0 +1,26 @@
+/**
+ * 
+ */
+package collections_framework_list;
+import java.util.ArrayList;
+
+/**
+ * 
+ */
+public class JavaApp {
+	public static void execution() {
+		ArrayList<Integer> al1 = new ArrayList<Integer>();
+		al1.add(1);al1.add(-2);al1.add(3);al1.add(-4);al1.add(5);
+		al1.add(-6);
+		System.out.println(al1);
+		
+		ArrayList<Integer> al2 = (ArrayList<Integer>) al1.clone();
+		System.out.println(al2);
+		
+		System.out.println(al1.equals(al2));
+		
+		System.out.println(al1.hashCode());
+		System.out.println(al2.hashCode());
+	}
+
+}

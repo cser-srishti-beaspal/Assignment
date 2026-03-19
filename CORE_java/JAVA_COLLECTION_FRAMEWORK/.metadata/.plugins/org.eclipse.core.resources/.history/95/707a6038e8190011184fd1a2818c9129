@@ -1,0 +1,14 @@
+package one_to_one;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Student s = new Student("Rahul");
+        Branch b = new Branch("Computer Science", s);
+        Department d = new Department("Engineering", b);
+        College c = new College("ABC College", d);
+        University u = new University("XYZ University", c);
+
+        u.displayUniversity();
+    }
+}

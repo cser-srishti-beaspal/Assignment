@@ -1,0 +1,10 @@
+package collections_framework_stdCrud;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Input {
+	public static void addStudent(ArrayList<Student> student, Scanner sc) {
+		
+	}
+}

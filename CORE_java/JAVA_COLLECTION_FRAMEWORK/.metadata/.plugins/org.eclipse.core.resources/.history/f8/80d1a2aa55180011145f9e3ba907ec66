@@ -1,0 +1,22 @@
+package collections_framework_list;
+
+public class Product {
+	int id;
+	String branch;
+	String item;
+	double price;
+	public Product(int id, String branch, String item, double price) {
+		super();
+		this.id = id;
+		this.branch = branch;
+		this.item = item;
+		this.price = price;
+	}
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", branch=" + branch + ", item=" + item + ", price=" + price + "]";
+	}
+	
+	
+
+}
